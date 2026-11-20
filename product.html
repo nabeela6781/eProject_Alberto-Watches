@@ -1,0 +1,1766 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALBERTO | Watch Technology</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --gold: #c9a45c;
+    --light-gold: #ead29e;
+    --black: #080808;
+    --brown: #21160f;
+    --text: #e9e1d5;
+    --muted: #aaa096;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100%;
+    min-height: 82px;
+    background: rgba(7,7,7,.98);
+    padding: 12px 5%;
+    border-bottom: 1px solid rgba(201,164,92,.4);
+    z-index: 1000;
+    margin: 0;
+}
+
+.navbar .container-fluid {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--gold) !important;
+    text-decoration: none;
+    margin: 0;
+    padding: 5px 0;
+    white-space: nowrap;
+}
+
+.crown-logo {
+    width: 42px;
+    height: 42px;
+    fill: var(--gold);
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 5px rgba(201,164,92,.35));
+}
+
+.navbar-brand span {
+    display: block;
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    line-height: 1;
+}
+
+.navbar-brand small {
+    display: block;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #d4c3a4;
+    font-size: 8px;
+    letter-spacing: 3px;
+    margin-top: 6px;
+}
+
+.navbar .navbar-collapse {
+    align-items: center;
+}
+
+.navbar .navbar-nav {
+    align-items: center;
+    gap: 2px;
+}
+
+.navbar .nav-link {
+    color: #eee !important;
+    font-size: 13px;
+    letter-spacing: 1.3px;
+    font-weight: 500;
+    margin-left: 12px;
+    padding: 12px 7px !important;
+    transition: .3s;
+    position: relative;
+}
+
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    left: 7px;
+    bottom: 5px;
+    background: var(--gold);
+    transition: .3s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--gold) !important;
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+    width: calc(100% - 14px);
+}
+
+.navbar-toggler {
+    border: 1px solid var(--gold);
+    padding: 7px 10px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(201,164,92,.2);
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+.visitors {
+    color: var(--gold);
+    font-size: 10px;
+    white-space: nowrap;
+    margin-left: 12px;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 490px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 80px 9%;
+    overflow: hidden;
+    background:
+      linear-gradient(90deg, rgba(0,0,0,.96) 0%, rgba(0,0,0,.76) 45%, rgba(0,0,0,.2) 100%),
+      url('watch.png') center/cover no-repeat;
+    margin: 0;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: -100%;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    animation: goldLine 4s linear infinite;
+}
+
+.hero-content {
+    max-width: 650px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    animation: heroEnter 1.2s ease both;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 5px;
+}
+
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(45px, 6.5vw, 82px);
+    line-height: .98;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero p {
+    color: #d1c9bf;
+    font-size: 12px;
+    line-height: 2.1;
+    max-width: 520px;
+}
+
+.gold-btn {
+    display: inline-block;
+    background: var(--gold);
+    color: #090909;
+    padding: 14px 27px;
+    margin-top: 18px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: .35s;
+    border: 1px solid var(--gold);
+}
+
+.gold-btn:hover {
+    background: var(--light-gold);
+    color: #000;
+    transform: translateY(-4px);
+    box-shadow: 0 9px 25px rgba(201,164,92,.2);
+}
+
+/* ================= COMMON ================= */
+
+.section {
+    padding: 75px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.section-title small {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+.section-title h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(34px, 4vw, 52px);
+    margin-top: 10px;
+}
+
+.section-title h2 span {
+    color: var(--gold);
+}
+
+.section-title p {
+    max-width: 700px;
+    margin: 12px auto 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 2;
+}
+
+/* ================= INTRO ================= */
+
+.intro {
+    background: linear-gradient(130deg, #17100b, #0b0a09);
+    text-align: center;
+    padding: 65px 10%;
+    border-bottom: 1px solid rgba(201,164,92,.2);
+}
+
+.intro h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 49px);
+}
+
+.intro h2 span {
+    color: var(--gold);
+}
+
+.intro p {
+    max-width: 850px;
+    margin: 15px auto 0;
+    color: #b8afa4;
+    font-size: 12px;
+    line-height: 2.2;
+}
+
+/* ================= MOVEMENT ================= */
+
+.movement {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.movement-image {
+    min-height: 390px;
+    background:
+      linear-gradient(0deg, rgba(0,0,0,.12), transparent),
+      url('watch3.png') center/cover;
+    border: 1px solid rgba(201,164,92,.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.movement-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(201,164,92,.5);
+    margin: 12px;
+    pointer-events: none;
+}
+
+.movement-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 43px;
+    line-height: 1.05;
+    margin: 13px 0;
+}
+
+.movement-content h2 span {
+    color: var(--gold);
+}
+
+.movement-content p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 2.1;
+}
+
+.gold-divider {
+    width: 75px;
+    height: 2px;
+    background: var(--gold);
+    margin: 20px 0;
+}
+
+/* ================= TECHNOLOGY CARDS ================= */
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.tech-card {
+    background: linear-gradient(145deg, #21170f, #100e0c);
+    border: 1px solid rgba(201,164,92,.25);
+    padding: 30px 25px;
+    min-height: 225px;
+    position: relative;
+    overflow: hidden;
+    transition: .4s;
+}
+
+.tech-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: var(--gold);
+    transition: .5s;
+}
+
+.tech-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--gold);
+    box-shadow: 0 12px 30px rgba(0,0,0,.35);
+}
+
+.tech-card:hover::before {
+    left: 0;
+}
+
+.tech-icon {
+    font-size: 29px;
+    color: var(--gold);
+    margin-bottom: 17px;
+}
+
+.tech-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    color: var(--light-gold);
+}
+
+.tech-card p {
+    color: #aaa096;
+    font-size: 11px;
+    line-height: 2;
+    margin: 0;
+}
+
+/* ================= CRAFTSMANSHIP ================= */
+
+.craft-section {
+    background:
+      linear-gradient(rgba(8,7,6,.92), rgba(8,7,6,.95)),
+      url('https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=1800&q=85') center/cover fixed;
+}
+
+.craft-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.craft-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    line-height: 1.05;
+}
+
+.craft-content h2 span {
+    color: var(--gold);
+}
+
+.craft-content p {
+    font-size: 12px;
+    line-height: 2.1;
+    color: #b9afa3;
+    margin-top: 17px;
+}
+
+.craft-points {
+    display: grid;
+    gap: 18px;
+}
+
+.craft-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+    padding: 17px;
+    border-bottom: 1px solid rgba(201,164,92,.3);
+}
+
+.craft-point i {
+    color: var(--gold);
+    font-size: 24px;
+}
+
+.craft-point h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    margin: 0 0 4px;
+}
+
+.craft-point p {
+    color: #aaa096;
+    font-size: 10px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* ================= PROCESS ================= */
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    text-align: center;
+}
+
+.process-item {
+    padding: 25px 12px;
+    border-right: 1px solid rgba(201,164,92,.25);
+}
+
+.process-item:last-child {
+    border: none;
+}
+
+.process-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    color: var(--gold);
+}
+
+.process-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+}
+
+.process-item p {
+    font-size: 10px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+/* ================= FINAL BANNER ================= */
+
+.final-banner {
+    min-height: 330px;
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 55px 8%;
+    overflow: hidden;
+    background: #090807;
+    border-top: 1px solid rgba(201,164,92,.35);
+    border-bottom: 1px solid rgba(201,164,92,.35);
+}
+
+.final-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background:
+      url('https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=2000&q=90')
+      center 48% / cover no-repeat;
+    transition: transform 1.2s ease, filter 1.2s ease;
+}
+
+.final-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(90deg,
+      rgba(0,0,0,.88),
+      rgba(0,0,0,.58),
+      rgba(0,0,0,.78));
+    transition: background .5s ease;
+}
+
+.final-banner:hover::before {
+    transform: scale(1.08);
+    filter: saturate(1.12) brightness(1.08);
+}
+
+.final-banner-content {
+    max-width: 900px;
+    position: relative;
+    z-index: 1;
+}
+
+.final-banner .eyebrow {
+    opacity: 0;
+    animation: bannerTextIn .8s ease .15s forwards;
+}
+
+.final-banner h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(35px, 5vw, 64px);
+    line-height: 1.08;
+    margin: 17px 0 10px;
+    opacity: 0;
+    animation: bannerTextIn 1s ease .4s forwards;
+    transition: transform .4s ease;
+}
+
+.final-banner h2 span {
+    display: inline-block;
+    color: var(--gold);
+    animation: goldTextGlow 3s ease-in-out 1.5s infinite alternate;
+}
+
+.final-banner:hover h2 {
+    transform: translateY(-4px);
+}
+
+.final-banner .gold-btn {
+    opacity: 0;
+    animation: bannerTextIn .8s ease .75s forwards;
+}
+
+@keyframes bannerTextIn {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes goldTextGlow {
+    from {
+        text-shadow: 0 0 0 rgba(201,164,92,0);
+    }
+    to {
+        text-shadow: 0 0 18px rgba(201,164,92,.45);
+    }
+}
+
+/* ================= PREMIUM FOOTER ================= */
+
+footer {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    padding: 55px 0 0;
+    overflow: hidden;
+    background: #080706;
+    border-top: 1px solid rgba(201,164,92,.55);
+}
+
+/* Footer Background Image */
+
+footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background:
+        url('https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=2000&q=85')
+        center center / cover no-repeat;
+    opacity: .30;
+    transition: transform 1s ease;
+}
+
+footer:hover::before {
+    transform: scale(1.03);
+}
+
+/* Dark Overlay */
+
+footer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+        100deg,
+        rgba(0,0,0,.96),
+        rgba(0,0,0,.91),
+        rgba(0,0,0,.96)
+    );
+}
+
+/* Footer Container */
+
+.footer-main {
+    padding: 0 10% 35px;
+}
+
+.footer-column {
+    height: 100%;
+}
+
+/* Logo */
+
+.footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--gold);
+    font-size: 30px;
+    letter-spacing: 5px;
+    margin: 0;
+    font-weight: 500;
+}
+
+.section-label {
+    font-size: 8px;
+    color: var(--light-gold);
+    letter-spacing: 4px;
+    margin-top: 5px;
+    margin-bottom: 16px;
+}
+
+/* Description */
+
+.footer-description {
+    color: #b9afa3;
+    font-size: 10px;
+    line-height: 2;
+    max-width: 340px;
+    margin-top: 12px;
+}
+
+/* Social Links */
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    margin-top: 22px;
+}
+
+.social-links a {
+    color: var(--gold);
+    font-size: 17px;
+    text-decoration: none;
+    transition: .3s ease;
+    display: inline-flex;
+}
+
+.social-links a:hover {
+    color: #fff;
+    transform: translateY(-5px);
+    text-shadow: 0 0 12px rgba(201,164,92,.7);
+}
+
+/* Footer Headings */
+
+footer h5 {
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Footer Lists */
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 13px;
+    position: relative;
+    padding-left: 13px;
+}
+
+.footer-links li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--gold);
+}
+
+.footer-links a {
+    color: #c8c0b6;
+    text-decoration: none;
+    font-size: 10px;
+    transition: .3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+    padding-left: 5px;
+}
+
+/* Contact Details */
+
+.footer-contact {
+    color: #bdb5aa;
+    font-size: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.7;
+    transition: .3s ease;
+}
+
+.footer-contact i {
+    color: var(--gold);
+    font-size: 12px;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.footer-contact:hover {
+    color: var(--gold);
+    transform: translateX(4px);
+}
+
+/* Copyright Section */
+
+.copyright {
+    width: 80%;
+    margin: 0 auto;
+    padding: 17px 10px 15px;
+    border-top: 1px solid rgba(201,164,92,.27);
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.7;
+}
+
+/* ================= MODAL ================= */
+
+.alberto-modal .modal-content {
+    background: linear-gradient(145deg, #17110c, #080808);
+    color: var(--text);
+    border: 1px solid rgba(201,164,92,.65);
+    border-radius: 2px;
+    box-shadow: 0 22px 70px rgba(0,0,0,.65);
+}
+
+.alberto-modal .modal-header {
+    border-bottom: 1px solid rgba(201,164,92,.25);
+    padding: 22px 26px 14px;
+}
+
+.alberto-modal .modal-title {
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+.alberto-modal .modal-body {
+    padding: 25px 26px;
+    color: #d4c9b9;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.alberto-modal .modal-footer {
+    border-top: 1px solid rgba(201,164,92,.2);
+    padding: 16px 26px 22px;
+}
+
+.alberto-modal .btn-close {
+    filter: invert(1);
+    opacity: .8;
+}
+
+.alberto-modal .modal-mark {
+    color: var(--gold);
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.alberto-modal .modal-action {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    background: var(--gold);
+    color: #100b06;
+    padding: 11px 22px;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    transition: .3s ease;
+}
+
+.alberto-modal .modal-action:hover {
+    background: transparent;
+    color: var(--gold);
+    transform: translateY(-2px);
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes heroEnter {
+    from {
+        opacity: 0;
+        transform: translateY(45px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes goldLine {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width: 1199px) {
+    .navbar {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+
+    .navbar .nav-link {
+        margin-left: 6px;
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .visitors {
+        font-size: 9px;
+    }
+
+    .footer-main {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+}
+
+@media(max-width: 991px) {
+    .navbar {
+        position: relative !important;
+        min-height: 75px;
+        padding: 12px 4%;
+    }
+
+    .navbar .container-fluid {
+        flex-wrap: wrap;
+    }
+
+    .navbar .navbar-collapse {
+        flex-basis: 100%;
+        width: 100%;
+        background: #080808;
+        padding: 12px 0 8px;
+        margin-top: 10px;
+        border-top: 1px solid rgba(201,164,92,.2);
+    }
+
+    .navbar .navbar-nav {
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .navbar .nav-link {
+        margin-left: 0;
+        padding: 11px 5px !important;
+        font-size: 11px;
+    }
+
+    .navbar .nav-link::after {
+        display: none;
+    }
+
+    .visitors {
+        margin: 10px 5px;
+        font-size: 11px;
+    }
+
+    .movement,
+    .craft-layout {
+        gap: 30px;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-main {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    footer {
+        padding-top: 45px;
+    }
+}
+
+@media(max-width: 767px) {
+    .hero {
+        min-height: 420px;
+        padding: 65px 7%;
+        background-position: 62% center;
+    }
+
+    .section {
+        padding: 55px 7%;
+    }
+
+    .intro {
+        padding: 50px 7%;
+    }
+
+    .movement,
+    .craft-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .movement-image {
+        min-height: 270px;
+    }
+
+    .movement-content h2,
+    .craft-content h2 {
+        font-size: 38px;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-item:nth-child(2) {
+        border-right: none;
+    }
+
+    .process-item:nth-child(3),
+    .process-item:nth-child(4) {
+        border-top: 1px solid rgba(201,164,92,.25);
+    }
+
+    .footer-main {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    .footer-column {
+        margin-bottom: 12px;
+    }
+
+    .copyright {
+        width: 86%;
+        font-size: 11px;
+    }
+}
+
+@media(max-width: 480px) {
+    .navbar {
+        padding: 10px 4%;
+    }
+
+    .navbar-brand span {
+        font-size: 26px;
+    }
+
+    .crown-logo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .navbar-brand small {
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
+
+    .hero {
+        min-height: 420px;
+        padding: 55px 7%;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+    }
+
+    .hero p {
+        font-size: 11px;
+    }
+
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-card {
+        min-height: auto;
+    }
+
+    .section-title h2 {
+        font-size: 34px;
+    }
+
+    .process-item {
+        padding: 20px 8px;
+    }
+
+    .footer-main {
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    footer {
+        padding-top: 38px;
+    }
+
+    .footer-logo {
+        font-size: 28px;
+    }
+
+    footer h5 {
+        margin-bottom: 14px;
+    }
+
+    .copyright {
+        width: 90%;
+        font-size: 10px;
+        padding: 15px 5px;
+    }
+
+    .final-banner {
+        min-height: 280px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg">
+<div class="container-fluid">
+
+<a class="navbar-brand" href="index.html">
+
+<svg class="crown-logo"
+     xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 64 64"
+     role="img"
+     aria-label="Alberto crown logo">
+
+    <path d="M8 18 L20 29 L30 10 L42 29 L56 18 L50 46 L14 46 Z"/>
+    <path d="M14 51 H50 V56 H14 Z"/>
+    <circle cx="8" cy="16" r="4"/>
+    <circle cx="30" cy="8" r="4"/>
+    <circle cx="56" cy="16" r="4"/>
+
+</svg>
+
+<span>
+ALBERTO
+<small>WATCH COMPANY</small>
+</span>
+
+</a>
+
+<button class="navbar-toggler"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#mainNavbar"
+aria-controls="mainNavbar"
+aria-expanded="false"
+aria-label="Toggle navigation">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse" id="mainNavbar">
+
+<ul class="navbar-nav mx-auto align-items-lg-center">
+
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
+<li class="nav-item"><a class="nav-link active" href="technology.html">Technology</a></li>
+<li class="nav-item"><a class="nav-link locator-btn" href="store-locator.html">Store Locator</a></li>
+<li class="nav-item"><a class="nav-link" href="support.html">Support</a></li>
+<li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+<li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+
+</ul>
+
+<div class="visitors">
+<i class="bi bi-people-fill"></i>
+Visitors: 1247
+</div>
+
+</div>
+</div>
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+    <div class="hero-content">
+        <div class="eyebrow">THE SCIENCE OF TIME</div>
+
+        <h1>Engineered for <span>Precision.</span></h1>
+
+        <p>
+            At ALBERTO, technology and timeless design come together.
+            Discover the engineering, materials and thoughtful details
+            that shape the experience of every timepiece.
+        </p>
+
+        <a href="#movement" class="gold-btn"
+           data-bs-toggle="modal"
+           data-bs-target="#albertoActionModal"
+           data-modal-title="Discover ALBERTO Technology"
+           data-modal-message="Explore the engineering and thoughtful details behind an ALBERTO timepiece. From precision movement to refined materials, every element is designed to bring elegance and function together."
+           data-modal-action="VIEW TECHNOLOGY"
+           data-modal-href="#movement">DISCOVER OUR TECHNOLOGY</a>
+    </div>
+</section>
+
+<!-- ================= INTRODUCTION ================= -->
+
+<section class="intro reveal">
+    <div class="eyebrow">INSIDE ALBERTO</div>
+    <h2>Innovation Behind <span>Elegance</span></h2>
+
+    <p>
+        A remarkable watch is created through the perfect balance of design
+        and engineering. ALBERTO focuses on the details that matter:
+        reliable timekeeping, refined finishing, comfortable construction
+        and materials selected to complement a luxury experience.
+        Every element contributes to a watch that looks sophisticated
+        and feels exceptional on the wrist.
+    </p>
+</section>
+
+<!-- ================= MOVEMENT ================= -->
+
+<section class="section" id="movement">
+    <div class="movement reveal">
+
+        <div class="movement-image"></div>
+
+        <div class="movement-content">
+            <div class="eyebrow">01 — THE HEART OF THE WATCH</div>
+
+            <h2>Precision <span>Movement</span></h2>
+
+            <div class="gold-divider"></div>
+
+            <p>
+                The movement is the heart of a timepiece. It is the mechanism
+                responsible for keeping time and coordinating the hands of
+                the watch.
+            </p>
+
+            <p>
+                ALBERTO's design philosophy places importance on dependable
+                timekeeping and practical performance. Depending on the
+                selected model, a watch may use a quartz or mechanical
+                movement, each offering its own distinctive experience.
+            </p>
+
+            <p>
+                This combination of engineering and elegant presentation
+                makes the movement an essential part of the watch's identity.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= TECHNOLOGY ================= -->
+
+<section class="section" style="background:#100d0a;">
+
+    <div class="section-title reveal">
+        <small>02 — ADVANCED DETAILS</small>
+        <h2>Technology That <span>Matters</span></h2>
+
+        <p>
+            Every detail has a purpose. Explore the important technologies
+            and design features that contribute to the character of a watch.
+        </p>
+    </div>
+
+    <div class="tech-grid">
+
+        <div class="tech-card reveal">
+            <div class="tech-icon"><i class="bi bi-gear-wide-connected"></i></div>
+            <h3>Watch Movement</h3>
+            <p>
+                The movement controls the watch's timekeeping functions.
+                Quartz movements use an electronic oscillator, while
+                mechanical movements operate through carefully arranged
+                mechanical components.
+            </p>
+        </div>
+
+        <div class="tech-card reveal">
+            <div class="tech-icon"><i class="bi bi-gem"></i></div>
+            <h3>Crystal Protection</h3>
+            <p>
+                The crystal covers and protects the watch dial. Sapphire
+                crystal is valued in watchmaking for its excellent
+                scratch resistance and clear appearance.
+            </p>
+        </div>
+
+        <div class="tech-card reveal">
+            <div class="tech-icon"><i class="bi bi-shield-check"></i></div>
+            <h3>Durable Case</h3>
+            <p>
+                The watch case protects its internal components and
+                gives the timepiece its visual character. Its finishing
+                and construction contribute to durability and style.
+            </p>
+        </div>
+
+        <div class="tech-card reveal">
+            <div class="tech-icon"><i class="bi bi-droplet-half"></i></div>
+            <h3>Water Resistance</h3>
+            <p>
+                Water resistance depends on the seals and construction
+                of each model. The stated rating should always be checked
+                before exposing a watch to water.
+            </p>
+        </div>
+
+        <div class="tech-card reveal">
+            <div class="tech-icon"><i class="bi bi-brightness-high"></i></div>
+            <h3>Dial Visibility</h3>
+            <p>
+                Clear markers, balanced hands and thoughtful dial layouts
+                help make the time easy to read while maintaining
+                a refined appearance.
+            </p>
+        </div>
+
+        <div class="tech-card reveal">
+            <div class="tech-icon"><i class="bi bi-link-45deg"></i></div>
+            <h3>Strap Engineering</h3>
+            <p>
+                A carefully designed strap or bracelet supports a
+                comfortable fit. Its material and finishing complete
+                the overall look of the timepiece.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= CRAFTSMANSHIP ================= -->
+
+<section class="section craft-section">
+
+    <div class="craft-layout">
+
+        <div class="craft-content reveal">
+            <div class="eyebrow">03 — MATERIALS & CRAFTSMANSHIP</div>
+
+            <h2>Made with <span>Purpose.</span><br>Finished with Care.</h2>
+
+            <p>
+                Luxury is found in the details. From the shape of the
+                case to the finish of the dial, every design decision
+                influences the final character of a watch.
+            </p>
+
+            <p>
+                ALBERTO brings together visual elegance and practical
+                construction to create a balanced timepiece for
+                everyday style and special occasions.
+            </p>
+        </div>
+
+        <div class="craft-points reveal">
+
+            <div class="craft-point">
+                <i class="bi bi-gem"></i>
+                <div>
+                    <h4>Refined Finishing</h4>
+                    <p>Careful attention to surfaces, edges and small design details.</p>
+                </div>
+            </div>
+
+            <div class="craft-point">
+                <i class="bi bi-shield-lock"></i>
+                <div>
+                    <h4>Protective Construction</h4>
+                    <p>Thoughtful case design helps protect the watch's internal components.</p>
+                </div>
+            </div>
+
+            <div class="craft-point">
+                <i class="bi bi-hand-thumbs-up"></i>
+                <div>
+                    <h4>Comfortable Design</h4>
+                    <p>Balanced proportions and considered strap design for everyday wear.</p>
+                </div>
+            </div>
+
+            <div class="craft-point">
+                <i class="bi bi-stars"></i>
+                <div>
+                    <h4>Luxury Appearance</h4>
+                    <p>Elegant dials, distinctive details and timeless visual appeal.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================= QUALITY PROCESS ================= -->
+
+<section class="section">
+
+    <div class="section-title reveal">
+        <small>04 — OUR APPROACH</small>
+        <h2>Details Make the <span>Difference</span></h2>
+
+        <p>
+            A thoughtful approach to watch design brings together
+            essential elements to create a complete experience.
+        </p>
+    </div>
+
+    <div class="process-grid reveal">
+
+        <div class="process-item">
+            <div class="process-number">01</div>
+            <h3>Design</h3>
+            <p>Creating a distinctive and balanced watch appearance.</p>
+        </div>
+
+        <div class="process-item">
+            <div class="process-number">02</div>
+            <h3>Engineering</h3>
+            <p>Considering movement, construction and practical features.</p>
+        </div>
+
+        <div class="process-item">
+            <div class="process-number">03</div>
+            <h3>Finishing</h3>
+            <p>Giving attention to materials, surfaces and fine details.</p>
+        </div>
+
+        <div class="process-item">
+            <div class="process-number">04</div>
+            <h3>Experience</h3>
+            <p>Bringing elegance and functionality together.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= FINAL BANNER ================= -->
+
+<section class="final-banner">
+
+    <div class="final-banner-content">
+
+        <div class="eyebrow">ALBERTO WATCH COMPANY</div>
+
+        <h2>Every Second Holds a <span>Precious Moment</span></h2>
+
+        <a href="collections.html" class="gold-btn"
+           data-bs-toggle="modal"
+           data-bs-target="#albertoActionModal"
+           data-modal-title="Explore the ALBERTO Collection"
+           data-modal-message="Discover timepieces created to complement your style. Explore the collection and find a design that makes every second feel special."
+           data-modal-action="EXPLORE NOW"
+           data-modal-href="collections.html">EXPLORE COLLECTIONS</a>
+
+    </div>
+
+</section>
+
+<!-- ================= PREMIUM FOOTER ================= -->
+
+<footer>
+
+    <div class="container-fluid footer-main">
+
+        <div class="row g-4">
+
+            <!-- COLUMN 1: BRAND -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="footer-column">
+
+                    <h2 class="footer-logo">ALBERTO</h2>
+
+                    <p class="section-label">WATCH COMPANY</p>
+
+                    <p class="footer-description">
+                        Defining timeless elegance through sophisticated
+                        watch designs. Discover the art of fine timekeeping
+                        with Alberto Watch Company.
+                    </p>
+
+                    <div class="social-links">
+
+                        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+
+                        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+
+                        <a href="https://www.youtube.com" target="_blank" aria-label="YouTube">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- COLUMN 2: QUICK LINKS -->
+
+            <div class="col-lg-2 col-md-6">
+
+                <div class="footer-column">
+
+                    <h5>Quick Links</h5>
+
+                    <ul class="footer-links">
+
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="product.html">Products</a></li>
+                        <li><a href="technology.html">Technology</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <!-- COLUMN 3: CUSTOMER CARE -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="footer-column">
+
+                    <h5>Customer Care</h5>
+
+                    <ul class="footer-links">
+
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="support.html">Customer Support</a></li>
+                        <li><a href="store-locator.html">Store Locator</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <!-- COLUMN 4: CONTACT -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="footer-column">
+
+                    <h5>Get In Touch</h5>
+
+                    <p class="footer-contact">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        New York, United States
+                    </p>
+
+                    <p class="footer-contact">
+                        <i class="bi bi-telephone-fill"></i>
+                        +1 800 123 4567
+                    </p>
+
+                    <p class="footer-contact">
+                        <i class="bi bi-envelope-fill"></i>
+                        info@albertowatches.com
+                    </p>
+
+                    <p class="footer-contact">
+                        <i class="bi bi-clock-fill"></i>
+                        Mon - Sat: 9:00 AM - 9:00 PM
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- COPYRIGHT -->
+
+    <div class="copyright">
+
+        © 2026 Alberto Watch Company. All Rights Reserved.
+
+        <br>
+
+        Designed with Elegance.
+
+    </div>
+
+</footer>
+
+<!-- ================= REUSABLE POPUP MODAL ================= -->
+
+<div class="modal fade alberto-modal" id="albertoActionModal"
+     tabindex="-1" aria-labelledby="albertoModalTitle" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="albertoModalTitle">
+                    ALBERTO WATCH COMPANY
+                </h5>
+
+                <button type="button" class="btn-close"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+
+            </div>
+
+            <div class="modal-body text-center">
+
+                <div class="modal-mark">
+                    <i class="bi bi-watch"></i>
+                </div>
+
+                <p id="albertoModalMessage" class="mb-0">
+                    Discover the craftsmanship and timeless elegance of ALBERTO.
+                </p>
+
+            </div>
+
+            <div class="modal-footer justify-content-center">
+
+                <button type="button" class="btn btn-outline-light btn-sm px-4"
+                        data-bs-dismiss="modal">
+                    CLOSE
+                </button>
+
+                <a href="#movement" id="albertoModalAction" class="modal-action">
+                    CONTINUE
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+/* POPUP MODAL */
+
+const albertoActionModal = document.getElementById('albertoActionModal');
+
+if (albertoActionModal) {
+
+    albertoActionModal.addEventListener('show.bs.modal', function (event) {
+
+        const trigger = event.relatedTarget;
+
+        if (!trigger) return;
+
+        document.getElementById('albertoModalTitle').textContent =
+            trigger.getAttribute('data-modal-title') || 'ALBERTO WATCH COMPANY';
+
+        document.getElementById('albertoModalMessage').textContent =
+            trigger.getAttribute('data-modal-message') || 'Discover the timeless elegance of ALBERTO.';
+
+        const action = document.getElementById('albertoModalAction');
+
+        action.textContent =
+            trigger.getAttribute('data-modal-action') || 'CONTINUE';
+
+        action.href =
+            trigger.getAttribute('data-modal-href') || trigger.getAttribute('href') || '#';
+    });
+
+    document.getElementById('albertoModalAction').addEventListener('click', function (event) {
+
+        const target = this.getAttribute('href');
+
+        if (target && target.startsWith('#')) {
+
+            event.preventDefault();
+
+            const modalInstance = bootstrap.Modal.getInstance(albertoActionModal);
+
+            modalInstance.hide();
+
+            setTimeout(() => {
+
+                const section = document.querySelector(target);
+
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+
+            }, 250);
+        }
+    });
+
+}
+
+/* SCROLL REVEAL */
+
+const revealObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add('show');
+
+            revealObserver.unobserve(entry.target);
+        }
+
+    });
+
+}, {
+    threshold: 0.12
+});
+
+document.querySelectorAll('.reveal').forEach(element => {
+    revealObserver.observe(element);
+});
+
+</script>
+
+</body>
+</html>

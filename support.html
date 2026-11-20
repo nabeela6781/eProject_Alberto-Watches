@@ -1,0 +1,1938 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Customer Support | Alberto Watch Company</title>
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= GLOBAL ================= */
+
+:root {
+    --black: #080706;
+    --dark: #100d09;
+    --card: #19130d;
+    --gold: #e9ad43;
+    --light-gold: #ffda83;
+    --white: #ffffff;
+    --muted: #c5b9a6;
+    --border: #80551d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes heroZoom {
+    from { transform: scale(1.15); }
+    to { transform: scale(1); }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes goldGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 4px rgba(233,173,67,.2));
+    }
+    50% {
+        filter: drop-shadow(0 0 12px rgba(233,173,67,.7));
+    }
+}
+
+.reveal,
+.reveal-left,
+.reveal-right {
+    opacity: 0;
+    transition: opacity .9s ease, transform .9s ease;
+}
+
+.reveal {
+    transform: translateY(40px);
+}
+
+.reveal-left {
+    transform: translateX(-45px);
+}
+
+.reveal-right {
+    transform: translateX(45px);
+}
+
+.reveal.show,
+.reveal-left.show,
+.reveal-right.show {
+    opacity: 1;
+    transform: translate(0);
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    background: rgba(8,7,6,.98);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 2%;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--light-gold) !important;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    line-height: 24px;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* CROWN LOGO */
+
+.navbar-brand .crown-logo {
+    display: block !important;
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px;
+    flex: 0 0 38px;
+    overflow: visible;
+    fill: #ffda83 !important;
+    color: #ffda83;
+    animation: goldGlow 3s infinite;
+    filter: drop-shadow(0 0 6px rgba(233,173,67,.65));
+    transition: .4s ease;
+}
+
+.navbar-brand:hover .crown-logo {
+    transform: translateY(-3px) rotate(-8deg);
+}
+
+.navbar-brand small {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 8px;
+    letter-spacing: 3px;
+}
+
+.navbar-nav {
+    gap: 5px;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 11px 12px !important;
+    transition: .3s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--gold);
+}
+
+.navbar-nav .locator-btn {
+    background: linear-gradient(120deg,#ffe5a7,#e7aa43);
+    color: #080706 !important;
+    border-radius: 30px;
+    padding: 10px 16px !important;
+}
+
+.visitors {
+    color: var(--light-gold);
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.navbar-toggler {
+    border: 1px solid var(--gold);
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+/* ================= HERO SECTION ================= */
+
+.support-hero {
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    border-bottom: 1px solid var(--border);
+    background: #080706;
+}
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-image: url('https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=85&w=2000');
+    background-position: center 48%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: heroZoom 12s ease-out forwards;
+}
+
+.support-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+        90deg,
+        rgba(5,4,3,.96) 0%,
+        rgba(5,4,3,.82) 35%,
+        rgba(5,4,3,.35) 70%,
+        rgba(5,4,3,.12) 100%
+    );
+}
+
+.support-hero::after {
+    content: "";
+    position: absolute;
+    right: 7%;
+    bottom: 0;
+    width: 230px;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ffda83,
+        transparent
+    );
+    box-shadow: 0 0 18px var(--gold);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 60px 0;
+}
+
+.hero-small {
+    color: var(--light-gold);
+    letter-spacing: 7px;
+    font-size: 11px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    animation: fadeUp 1s .2s both;
+}
+
+.hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(55px,7vw,85px);
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 15px;
+    animation: fadeUp 1s .4s both;
+}
+
+.hero-title span {
+    color: var(--gold);
+}
+
+.hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 34px;
+    color: var(--light-gold);
+    margin-bottom: 18px;
+    animation: fadeUp 1s .6s both;
+}
+
+.hero-description {
+    max-width: 470px;
+    color: #eee;
+    font-size: 13px;
+    line-height: 1.9;
+    animation: fadeUp 1s .8s both;
+}
+
+.hero-btn {
+    display: inline-block;
+    color: var(--light-gold);
+    border: 1px solid var(--gold);
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 11px;
+    margin-top: 12px;
+    transition: .3s;
+    animation: fadeUp 1s 1s both;
+}
+
+.hero-btn:hover {
+    background: var(--gold);
+    color: #080706;
+}
+
+/* ================= COMMON SECTIONS ================= */
+
+.section-padding {
+    padding: 75px 0;
+}
+
+.section-label {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 43px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    line-height: 1.1;
+}
+
+.gold-text {
+    color: var(--light-gold);
+}
+
+.gold-line {
+    width: 65px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 23px;
+}
+
+.section-description {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 2;
+}
+
+/* ================= SUPPORT OPTIONS ================= */
+
+.support-options {
+    background: #0b0907;
+}
+
+.support-card {
+    background: linear-gradient(145deg,#19130d,#0e0b08);
+    border: 1px solid #69491f;
+    border-radius: 7px;
+    padding: 30px 22px;
+    height: 100%;
+    transition: .4s;
+}
+
+.support-card:hover {
+    transform: translateY(-9px);
+    border-color: var(--light-gold);
+    box-shadow: 0 12px 35px rgba(233,173,67,.13);
+}
+
+.support-icon {
+    width: 57px;
+    height: 57px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    color: var(--light-gold);
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.support-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--light-gold);
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.support-card p {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.9;
+    margin-bottom: 17px;
+}
+
+.support-card a {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.support-card a:hover {
+    color: white;
+}
+
+/* ================= WATCH CARE ================= */
+
+.care-section {
+    background: #0b0907;
+    border-top: 1px solid #3b2915;
+}
+
+.care-point {
+    display: flex;
+    gap: 15px;
+    margin-top: 23px;
+}
+
+.care-point > i {
+    color: var(--gold);
+    font-size: 19px;
+    margin-top: 3px;
+}
+
+.care-point h5 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--light-gold);
+    font-size: 21px;
+    margin-bottom: 5px;
+}
+
+.care-point p {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.care-image-wrapper {
+    position: relative;
+    padding: 9px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.care-image-wrapper img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    display: block;
+    transition: 1s;
+}
+
+.care-image-wrapper:hover img {
+    transform: scale(1.06);
+}
+
+.care-image-caption {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    background: rgba(8,7,6,.9);
+    border: 1px solid var(--gold);
+    padding: 12px 18px;
+    color: var(--light-gold);
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+/* ================= USER GUIDE ================= */
+
+.guide-section {
+    background: linear-gradient(180deg,#110d08,#080706);
+    border-top: 1px solid #3b2915;
+}
+
+.guide-card {
+    background: linear-gradient(145deg,#19130d,#0e0b08);
+    border: 1px solid #69491f;
+    padding: 28px 22px;
+    height: 100%;
+    position: relative;
+    transition: .4s;
+}
+
+.guide-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--light-gold);
+    box-shadow: 0 12px 30px rgba(233,173,67,.12);
+}
+
+.guide-number {
+    color: rgba(233,173,67,.35);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.guide-icon {
+    color: var(--light-gold);
+    font-size: 27px;
+    margin: 10px 0 17px;
+}
+
+.guide-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--light-gold);
+    font-size: 24px;
+}
+
+.guide-card p {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.9;
+    margin: 0;
+}
+
+/* ================= WARRANTY ================= */
+
+.warranty-section {
+    background: #0b0907;
+    border-top: 1px solid #3b2915;
+}
+
+.warranty-box {
+    padding: 30px;
+    border: 1px solid var(--border);
+    background: linear-gradient(145deg,#19130d,#0e0b08);
+}
+
+.warranty-item {
+    display: flex;
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(128,85,29,.35);
+}
+
+.warranty-item:last-child {
+    border-bottom: none;
+}
+
+.warranty-item > i {
+    color: var(--gold);
+    font-size: 25px;
+    min-width: 30px;
+}
+
+.warranty-item h5 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--light-gold);
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.warranty-item p {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* ================= SERVICE PROCESS ================= */
+
+.service-section {
+    background: linear-gradient(180deg,#110d08,#080706);
+    border-top: 1px solid #3b2915;
+    border-bottom: 1px solid #3b2915;
+}
+
+.service-step {
+    height: 100%;
+    text-align: center;
+    padding: 35px 25px;
+    background: linear-gradient(145deg,#19130d,#0e0b08);
+    border: 1px solid var(--border);
+    transition: .4s;
+}
+
+.service-step:hover {
+    transform: translateY(-8px);
+    border-color: var(--light-gold);
+}
+
+.service-step span {
+    display: block;
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.service-step i {
+    display: block;
+    font-size: 32px;
+    color: var(--light-gold);
+    margin-bottom: 18px;
+}
+
+.service-step h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    color: var(--light-gold);
+    margin-bottom: 12px;
+}
+
+.service-step p {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.9;
+    margin: 0;
+}
+
+/* ================= FAQ ================= */
+
+.faq-section {
+    background: #090806;
+}
+
+.custom-accordion .accordion-item {
+    background: #15100b;
+    border: 1px solid #69491f;
+    border-radius: 5px !important;
+    margin-bottom: 13px;
+    overflow: hidden;
+}
+
+.custom-accordion .accordion-button {
+    background: #15100b;
+    color: var(--light-gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    font-weight: 600;
+    padding: 18px 22px;
+    box-shadow: none;
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+    background: #21180e;
+    color: var(--light-gold);
+}
+
+.custom-accordion .accordion-button::after {
+    filter: brightness(0) saturate(100%) invert(79%) sepia(47%) saturate(600%) hue-rotate(345deg);
+}
+
+.custom-accordion .accordion-body {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 2;
+    padding: 18px 22px;
+    background: #100d09;
+}
+
+/* ================= EXPERIENCE ================= */
+
+.experience-section {
+    position: relative;
+    background:
+        linear-gradient(rgba(0,0,0,.87),rgba(0,0,0,.92)),
+        url('https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=85&w=1800')
+        center/cover;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.experience-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    color: var(--light-gold);
+}
+
+.experience-text {
+    color: #ddd;
+    font-size: 12px;
+    line-height: 2;
+    max-width: 650px;
+    margin: 15px auto 25px;
+}
+
+.gold-btn {
+    display: inline-block;
+    background: linear-gradient(120deg,#ffe19b,#d99a35);
+    color: #080706;
+    padding: 12px 27px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.gold-btn:hover {
+    color: #000;
+    background: white;
+    transform: translateY(-4px);
+    box-shadow: 0 5px 25px rgba(233,173,67,.3);
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+    background: #080706;
+    border-top: 1px solid var(--border);
+    padding: 45px 0 20px;
+}
+
+.footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    letter-spacing: 3px;
+    color: var(--light-gold);
+}
+
+.footer-description {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.9;
+}
+
+.footer h5 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--light-gold);
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 11px;
+}
+
+.footer-links a {
+    color: #c8c0b4;
+    font-size: 11px;
+    transition: .3s;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+    padding-left: 5px;
+}
+
+.footer-contact {
+    color: #c8c0b4;
+    font-size: 11px;
+    margin-bottom: 13px;
+}
+
+.footer-contact i {
+    color: var(--gold);
+    margin-right: 8px;
+}
+
+.social-links a {
+    color: var(--light-gold);
+    font-size: 18px;
+    margin-right: 14px;
+    transition: .3s;
+}
+
+.social-links a:hover {
+    color: white;
+}
+
+.copyright {
+    border-top: 1px solid #493419;
+    padding-top: 17px;
+    margin-top: 30px;
+    color: #938777;
+    text-align: center;
+    font-size: 10px;
+}
+
+/* ================= BACK TO TOP ================= */
+
+.back-top {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 42px;
+    height: 42px;
+    background: var(--gold);
+    color: #080706;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    border: none;
+}
+
+.back-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-top:hover {
+    background: white;
+    transform: translateY(-5px);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:991px) {
+
+    .navbar-nav {
+        padding: 15px 0;
+        gap: 0;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px !important;
+    }
+
+    .visitors {
+        display: none;
+    }
+}
+
+@media(max-width:767px) {
+
+    .navbar-brand {
+        font-size: 26px;
+    }
+
+    .navbar-brand .crown-logo {
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px;
+        flex-basis: 32px;
+    }
+
+    .support-hero {
+        min-height: 380px;
+    }
+
+    .hero-background {
+        background-position: 65% center;
+    }
+
+    .hero-small {
+        font-size: 9px;
+        letter-spacing: 4px;
+    }
+
+    .hero-title {
+        font-size: 55px;
+    }
+
+    .hero-subtitle {
+        font-size: 26px;
+    }
+
+    .hero-description {
+        font-size: 11px;
+    }
+
+    .section-padding {
+        padding: 55px 0;
+    }
+
+    .section-title {
+        font-size: 37px;
+    }
+
+    .care-image-wrapper img {
+        height: 330px;
+    }
+
+    .warranty-box {
+        padding: 20px 16px;
+    }
+
+    .guide-card,
+    .service-step {
+        padding: 25px 20px;
+    }
+
+    .experience-title {
+        font-size: 36px;
+    }
+
+    .care-image-caption {
+        left: 18px;
+        bottom: 18px;
+        font-size: 9px;
+    }
+}
+
+/* ================= ACCESSIBILITY ================= */
+
+@media(prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+<!-- NAVBAR -->
+
+<!-- sticky-top removed to prevent header overlap -->
+<nav class="navbar navbar-expand-lg">
+
+<div class="container-fluid">
+
+<a class="navbar-brand" href="index.html">
+
+<svg class="crown-logo"
+     xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 64 64"
+     role="img"
+     aria-label="Alberto crown logo">
+
+    <path d="M8 18 L20 29 L30 10 L42 29 L56 18 L50 46 L14 46 Z"/>
+    <path d="M14 51 H50 V56 H14 Z"/>
+    <circle cx="8" cy="16" r="4"/>
+    <circle cx="30" cy="8" r="4"/>
+    <circle cx="56" cy="16" r="4"/>
+
+</svg>
+
+<span>
+ALBERTO
+<small>WATCH COMPANY</small>
+</span>
+
+</a>
+
+<button class="navbar-toggler"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#mainNavbar"
+aria-controls="mainNavbar"
+aria-expanded="false"
+aria-label="Toggle navigation">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse" id="mainNavbar">
+
+<ul class="navbar-nav mx-auto align-items-lg-center">
+
+<li class="nav-item">
+<a class="nav-link" href="index.html">Home</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="product.html">Products</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="technology.html">Technology</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link locator-btn" href="store-locator.html">Store Locator</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="support.html">Support</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="gallery.html">Gallery</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="aboutus.html">About Us</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="contact.html">Contact Us</a>
+</li>
+
+</ul>
+
+<div class="visitors">
+<i class="bi bi-people-fill"></i>
+Visitors: 1247
+</div>
+
+</div>
+</div>
+</nav>
+
+<!-- ================= HERO SECTION ================= -->
+
+<section class="support-hero">
+
+<div class="hero-background"></div>
+
+<div class="container hero-content">
+
+<p class="hero-small">
+ALBERTO WATCH COMPANY
+</p>
+
+<h1 class="hero-title">
+Customer <span>Support</span>
+</h1>
+
+<h2 class="hero-subtitle">
+A Guide to Timeless Care
+</h2>
+
+<p class="hero-description">
+Discover everything you need to know about your
+Alberto timepiece. Explore helpful guides, watch
+care advice and product information.
+</p>
+
+<a href="#support-services" class="hero-btn">
+Explore Support
+<i class="bi bi-arrow-down ms-2"></i>
+</a>
+
+</div>
+</section>
+
+
+<!-- ================= SUPPORT OPTIONS ================= -->
+
+<section class="support-options section-padding" id="support-services">
+
+<div class="container">
+
+<div class="text-center mb-5 reveal">
+
+<p class="section-label">ALBERTO CUSTOMER CARE</p>
+
+<h2 class="section-title">
+Your Personal <span class="gold-text">Watch Guide</span>
+</h2>
+
+<p class="section-description">
+Everything you need to understand, maintain and enjoy
+your Alberto timepiece.
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-4 reveal">
+<div class="support-card">
+
+<div class="support-icon">
+<i class="bi bi-book-half"></i>
+</div>
+
+<h4>Watch User Guide</h4>
+
+<p>
+Learn about watch functions, setting the time,
+adjusting your watch and understanding its features.
+</p>
+
+<a href="#watch-guide">
+Explore User Guide <i class="bi bi-arrow-right"></i>
+</a>
+
+</div>
+</div>
+
+<div class="col-md-4 reveal">
+<div class="support-card">
+
+<div class="support-icon">
+<i class="bi bi-shield-check"></i>
+</div>
+
+<h4>Warranty Guide</h4>
+
+<p>
+Understand warranty coverage, important conditions
+and the information you should keep with your watch.
+</p>
+
+<a href="#warranty-guide">
+Explore Warranty <i class="bi bi-arrow-right"></i>
+</a>
+
+</div>
+</div>
+
+<div class="col-md-4 reveal">
+<div class="support-card">
+
+<div class="support-icon">
+<i class="bi bi-stars"></i>
+</div>
+
+<h4>Watch Care Guide</h4>
+
+<p>
+Discover simple care practices to help preserve
+your timepiece's appearance and performance.
+</p>
+
+<a href="#care-guide">
+Learn Watch Care <i class="bi bi-arrow-right"></i>
+</a>
+
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ================= WATCH CARE GUIDE ================= -->
+
+<section class="care-section section-padding" id="care-guide">
+
+<div class="container">
+
+<div class="row align-items-center g-5">
+
+<div class="col-lg-6 reveal-left">
+
+<p class="section-label">PRESERVE YOUR TIMEPIECE</p>
+
+<h2 class="section-title">
+The Art of <span class="gold-text">Watch Care</span>
+</h2>
+
+<div class="gold-line"></div>
+
+<p class="section-description">
+A luxury timepiece deserves attention and care.
+Simple maintenance habits can help preserve its
+appearance and keep it ready for every occasion.
+</p>
+
+<div class="care-point">
+<i class="bi bi-check-circle-fill"></i>
+<div>
+<h5>Keep It Clean</h5>
+<p>Use a soft, clean cloth to gently wipe your watch and remove everyday dust.</p>
+</div>
+</div>
+
+<div class="care-point">
+<i class="bi bi-check-circle-fill"></i>
+<div>
+<h5>Store It Safely</h5>
+<p>Keep your timepiece in a clean, dry and secure place when not in use.</p>
+</div>
+</div>
+
+<div class="care-point">
+<i class="bi bi-check-circle-fill"></i>
+<div>
+<h5>Avoid Extreme Conditions</h5>
+<p>Protect your watch from extreme temperatures, strong impacts and unnecessary exposure to moisture.</p>
+</div>
+</div>
+
+<div class="care-point">
+<i class="bi bi-check-circle-fill"></i>
+<div>
+<h5>Follow Model Instructions</h5>
+<p>Always check the specific care and water-resistance guidance for your watch model.</p>
+</div>
+</div>
+
+</div>
+
+<div class="col-lg-6 reveal-right">
+
+<div class="care-image-wrapper">
+
+<img
+src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?q=85&w=1200"
+alt="Luxury wristwatch detail"
+loading="lazy">
+
+<div class="care-image-caption">
+TIMELESS BEAUTY. LASTING CARE.
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ================= WATCH USER GUIDE ================= -->
+
+<section class="guide-section section-padding" id="watch-guide">
+
+<div class="container">
+
+<div class="text-center mb-5 reveal">
+
+<p class="section-label">KNOW YOUR TIMEPIECE</p>
+
+<h2 class="section-title">
+Understanding Your <span class="gold-text">Watch</span>
+</h2>
+
+<p class="section-description">
+A few helpful guidelines for everyday watch use.
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-6 col-lg-3 reveal">
+<div class="guide-card">
+
+<div class="guide-number">01</div>
+
+<div class="guide-icon">
+<i class="bi bi-clock"></i>
+</div>
+
+<h4>Setting the Time</h4>
+
+<p>
+Follow the instructions provided with your watch
+to adjust the time correctly.
+</p>
+
+</div>
+</div>
+
+<div class="col-md-6 col-lg-3 reveal">
+<div class="guide-card">
+
+<div class="guide-number">02</div>
+
+<div class="guide-icon">
+<i class="bi bi-calendar3"></i>
+</div>
+
+<h4>Date Adjustment</h4>
+
+<p>
+If your model includes a date display, refer to
+its manual before making adjustments.
+</p>
+
+</div>
+</div>
+
+<div class="col-md-6 col-lg-3 reveal">
+<div class="guide-card">
+
+<div class="guide-number">03</div>
+
+<div class="guide-icon">
+<i class="bi bi-droplet"></i>
+</div>
+
+<h4>Water Resistance</h4>
+
+<p>
+Check your watch's specific water-resistance rating
+before exposing it to water.
+</p>
+
+</div>
+</div>
+
+<div class="col-md-6 col-lg-3 reveal">
+<div class="guide-card">
+
+<div class="guide-number">04</div>
+
+<div class="guide-icon">
+<i class="bi bi-watch"></i>
+</div>
+
+<h4>Strap Care</h4>
+
+<p>
+Care for leather, metal and other strap materials
+according to their specific requirements.
+</p>
+
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ================= WARRANTY GUIDE ================= -->
+
+<section class="warranty-section section-padding" id="warranty-guide">
+
+<div class="container">
+
+<div class="row align-items-center g-5">
+
+<div class="col-lg-5 reveal-left">
+
+<p class="section-label">ALBERTO ASSURANCE</p>
+
+<h2 class="section-title">
+Understanding Your <span class="gold-text">Warranty</span>
+</h2>
+
+<div class="gold-line"></div>
+
+<p class="section-description">
+Your warranty documentation contains important
+information about the coverage and conditions
+applicable to your particular timepiece.
+</p>
+
+<p class="section-description mt-3">
+Keep your proof of purchase and warranty documents
+in a safe place. Refer to the official warranty terms
+supplied with your product for accurate details.
+</p>
+
+</div>
+
+<div class="col-lg-7 reveal-right">
+
+<div class="warranty-box">
+
+<div class="warranty-item">
+<i class="bi bi-file-earmark-check"></i>
+<div>
+<h5>Keep Your Documents</h5>
+<p>Store your warranty card and purchase receipt safely.</p>
+</div>
+</div>
+
+<div class="warranty-item">
+<i class="bi bi-search"></i>
+<div>
+<h5>Check Your Coverage</h5>
+<p>Review the warranty terms for your specific watch model.</p>
+</div>
+</div>
+
+<div class="warranty-item">
+<i class="bi bi-tools"></i>
+<div>
+<h5>Authorized Service</h5>
+<p>Refer to the official service instructions for maintenance and repair.</p>
+</div>
+</div>
+
+<div class="warranty-item">
+<i class="bi bi-info-circle"></i>
+<div>
+<h5>Know the Conditions</h5>
+<p>Warranty coverage and exclusions depend on the applicable product terms.</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ================= SERVICE PROCESS ================= -->
+
+<section class="service-section section-padding">
+
+<div class="container">
+
+<div class="text-center mb-5 reveal">
+
+<p class="section-label">CARE BEYOND PURCHASE</p>
+
+<h2 class="section-title">
+Our <span class="gold-text">Service Journey</span>
+</h2>
+
+<p class="section-description">
+A simple overview of the watch service process.
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-4 reveal">
+
+<div class="service-step">
+
+<span>01</span>
+
+<i class="bi bi-clipboard-check"></i>
+
+<h4>Understand the Issue</h4>
+
+<p>
+Identify the concern with your watch and review
+the product documentation.
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4 reveal">
+
+<div class="service-step">
+
+<span>02</span>
+
+<i class="bi bi-wrench-adjustable-circle"></i>
+
+<h4>Service Assessment</h4>
+
+<p>
+The watch can be assessed according to the
+applicable service and repair requirements.
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4 reveal">
+
+<div class="service-step">
+
+<span>03</span>
+
+<i class="bi bi-watch"></i>
+
+<h4>Care & Completion</h4>
+
+<p>
+Follow the service guidance provided for your
+timepiece after the assessment is complete.
+</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ================= FAQ SECTION ================= -->
+
+<section class="faq-section section-padding">
+
+<div class="container">
+
+<div class="text-center mb-5 reveal">
+
+<p class="section-label">HELPFUL INFORMATION</p>
+
+<h2 class="section-title">
+Frequently Asked <span class="gold-text">Questions</span>
+</h2>
+
+<p class="section-description">
+Find quick answers to common questions about your timepiece.
+</p>
+
+</div>
+
+<div class="row justify-content-center">
+
+<div class="col-lg-9 reveal">
+
+<div class="accordion custom-accordion" id="faqAccordion">
+
+<!-- FAQ 1 -->
+
+<div class="accordion-item">
+
+<h2 class="accordion-header">
+
+<button class="accordion-button"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#faqOne"
+aria-expanded="true"
+aria-controls="faqOne">
+
+How often should I clean my watch?
+
+</button>
+
+</h2>
+
+<div id="faqOne"
+class="accordion-collapse collapse show"
+data-bs-parent="#faqAccordion">
+
+<div class="accordion-body">
+
+Gently wipe your watch with a soft, clean cloth
+when needed. Always follow the cleaning instructions
+for your specific watch material and model.
+
+</div>
+</div>
+</div>
+
+
+<!-- FAQ 2 -->
+
+<div class="accordion-item">
+
+<h2 class="accordion-header">
+
+<button class="accordion-button collapsed"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#faqTwo"
+aria-expanded="false"
+aria-controls="faqTwo">
+
+Can I wear my watch while swimming?
+
+</button>
+
+</h2>
+
+<div id="faqTwo"
+class="accordion-collapse collapse"
+data-bs-parent="#faqAccordion">
+
+<div class="accordion-body">
+
+Water resistance varies by watch model. Check the
+water-resistance rating and manufacturer's instructions
+before exposing your watch to water.
+
+</div>
+</div>
+</div>
+
+
+<!-- FAQ 3 -->
+
+<div class="accordion-item">
+
+<h2 class="accordion-header">
+
+<button class="accordion-button collapsed"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#faqThree"
+aria-expanded="false"
+aria-controls="faqThree">
+
+How should I store my Alberto watch?
+
+</button>
+
+</h2>
+
+<div id="faqThree"
+class="accordion-collapse collapse"
+data-bs-parent="#faqAccordion">
+
+<div class="accordion-body">
+
+Store your watch in a clean, dry and secure place.
+Using a suitable watch box can help protect it from
+dust and accidental scratches.
+
+</div>
+</div>
+</div>
+
+
+<!-- FAQ 4 -->
+
+<div class="accordion-item">
+
+<h2 class="accordion-header">
+
+<button class="accordion-button collapsed"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#faqFour"
+aria-expanded="false"
+aria-controls="faqFour">
+
+How do I know if my watch needs servicing?
+
+</button>
+
+</h2>
+
+<div id="faqFour"
+class="accordion-collapse collapse"
+data-bs-parent="#faqAccordion">
+
+<div class="accordion-body">
+
+If you notice unusual timekeeping, visible damage
+or problems with the watch's functions, refer to
+the product manual and seek appropriate service advice.
+
+</div>
+</div>
+</div>
+
+
+<!-- FAQ 5 -->
+
+<div class="accordion-item">
+
+<h2 class="accordion-header">
+
+<button class="accordion-button collapsed"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#faqFive"
+aria-expanded="false"
+aria-controls="faqFive">
+
+Where can I find my warranty information?
+
+</button>
+
+</h2>
+
+<div id="faqFive"
+class="accordion-collapse collapse"
+data-bs-parent="#faqAccordion">
+
+<div class="accordion-body">
+
+Your warranty details should be provided with your
+purchase documentation. Keep your warranty card and
+proof of purchase in a safe place.
+
+</div>
+</div>
+</div>
+
+
+<!-- FAQ 6 -->
+
+<div class="accordion-item">
+
+<h2 class="accordion-header">
+
+<button class="accordion-button collapsed"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#faqSix"
+aria-expanded="false"
+aria-controls="faqSix">
+
+How can I identify my watch model?
+
+</button>
+
+</h2>
+
+<div id="faqSix"
+class="accordion-collapse collapse"
+data-bs-parent="#faqAccordion">
+
+<div class="accordion-body">
+
+Check the product documentation, model information
+or markings provided with your timepiece. These details
+can help identify your specific watch model.
+
+</div>
+</div>
+</div>
+
+
+<!-- FAQ 7 -->
+
+<div class="accordion-item">
+
+<h2 class="accordion-header">
+
+<button class="accordion-button collapsed"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#faqSeven"
+aria-expanded="false"
+aria-controls="faqSeven">
+
+How should I care for a leather watch strap?
+
+</button>
+
+</h2>
+
+<div id="faqSeven"
+class="accordion-collapse collapse"
+data-bs-parent="#faqAccordion">
+
+<div class="accordion-body">
+
+Keep leather straps away from excessive moisture,
+direct heat and harsh chemicals. Follow the care
+instructions supplied with your watch.
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- ================= EXPERIENCE SECTION ================= -->
+
+<section class="experience-section section-padding">
+
+<div class="container text-center reveal">
+
+<p class="section-label">
+ALBERTO WATCH COMPANY
+</p>
+
+<h2 class="experience-title">
+Every Detail Deserves Attention
+</h2>
+
+<p class="experience-text">
+A fine timepiece deserves thoughtful care.
+Explore our collections and discover the craftsmanship
+behind every Alberto watch.
+</p>
+
+<a href="products.html" class="gold-btn">
+EXPLORE OUR COLLECTION
+<i class="bi bi-arrow-right ms-2"></i>
+</a>
+
+</div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+<div class="container">
+
+<div class="row g-4">
+
+<div class="col-lg-4 col-md-6">
+
+<h2 class="footer-logo">ALBERTO</h2>
+<p class="section-label">WATCH COMPANY</p>
+
+<p class="footer-description">
+Defining timeless elegance through sophisticated
+watch designs. Discover the art of fine timekeeping
+with Alberto Watch Company.
+</p>
+
+<div class="social-links mt-4">
+<a href="https://www.facebook.com"><i class="bi bi-facebook"></i></a>
+<a href="https://www.instagram.com"><i class="bi bi-instagram"></i></a>
+<a href="https://twitter.com"><i class="bi bi-twitter-x"></i></a>
+<a href="https://www.youtube.com"><i class="bi bi-youtube"></i></a>
+</div>
+
+</div>
+
+<div class="col-lg-2 col-md-6">
+<h5>Quick Links</h5>
+<ul class="footer-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="product.html">Products</a></li>
+<li><a href="technology.html">Technology</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+</ul>
+</div>
+
+<div class="col-lg-3 col-md-6">
+<h5>Customer Care</h5>
+<ul class="footer-links">
+<li><a href="aboutus.html">About Us</a></li>
+<li><a href="support.html">Customer Support</a></li>
+<li><a href="store-locator.html">Store Locator</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+</ul>
+</div>
+
+<div class="col-lg-3 col-md-6">
+<h5>Get In Touch</h5>
+
+<p class="footer-contact"><i class="bi bi-geo-alt-fill"></i>New York, United States</p>
+<p class="footer-contact"><i class="bi bi-telephone-fill"></i>+1 800 123 4567</p>
+<p class="footer-contact"><i class="bi bi-envelope-fill"></i>info@albertowatches.com</p>
+<p class="footer-contact"><i class="bi bi-clock-fill"></i>Mon - Sat: 9:00 AM - 9:00 PM</p>
+
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 Alberto Watch Company. All Rights Reserved.
+<br>Designed with Elegance.
+</div>
+
+</div>
+</footer>
+
+
+<!-- ================= BACK TO TOP ================= -->
+
+<button class="back-top" id="backTop" aria-label="Back to top">
+<i class="bi bi-arrow-up"></i>
+</button>
+
+
+<!-- ================= BACK TO TOP ================= -->
+
+<button class="back-top" id="backTop" aria-label="Back to top">
+<i class="bi bi-arrow-up"></i>
+</button>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+// SCROLL REVEAL ANIMATION
+
+const revealElements = document.querySelectorAll(
+    '.reveal, .reveal-left, .reveal-right'
+);
+
+const revealObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add('show');
+
+            revealObserver.unobserve(entry.target);
+
+        }
+
+    });
+
+}, {
+    threshold: 0.12
+});
+
+revealElements.forEach(element => {
+    revealObserver.observe(element);
+});
+
+
+// BACK TO TOP
+
+const backTop = document.getElementById('backTop');
+
+window.addEventListener('scroll', () => {
+
+    if (window.scrollY > 350) {
+        backTop.classList.add('show');
+    } else {
+        backTop.classList.remove('show');
+    }
+
+});
+
+backTop.addEventListener('click', () => {
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+
+});
+
+
+// CLOSE MOBILE NAVBAR AFTER CLICKING A LINK
+
+document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+
+    link.addEventListener('click', () => {
+
+        const navbar = document.getElementById('mainNavbar');
+
+        const bsCollapse = bootstrap.Collapse.getInstance(navbar);
+
+        if (bsCollapse) {
+            bsCollapse.hide();
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

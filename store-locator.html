@@ -1,0 +1,1231 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alberto Watch Company | Store Locator</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --gold:#e9b957;
+    --light-gold:#ffdc8a;
+    --gold-dark:#a77b25;
+    --black:#080706;
+    --panel:#15110d;
+}
+
+*{box-sizing:border-box;}
+
+html{
+    scroll-behavior:smooth;
+    overflow-x:hidden;
+}
+
+body{
+    margin:0;
+    padding:0;
+    width:100%;
+    overflow-x:hidden;
+    background:var(--black);
+    color:white;
+    font-family:'Poppins',sans-serif;
+}
+
+/* HEADER */
+
+.navbar{
+    position:relative;
+    width:100%;
+    min-height:90px;
+    z-index:1000;
+    background:#080706;
+    border-bottom:1px solid rgba(233,185,87,.28);
+    padding:12px 2%;
+}
+
+.navbar>.container-fluid{
+    min-height:52px;
+    display:flex;
+    flex-wrap:nowrap;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+}
+
+.navbar-brand{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    text-decoration:none;
+    margin:0;
+    padding:0;
+    flex:0 0 auto;
+}
+
+.crown-logo{
+    width:38px;
+    height:38px;
+    flex-shrink:0;
+    fill:var(--gold);
+    stroke:var(--gold);
+    stroke-width:1;
+    transition:none;
+}
+
+.navbar-brand:hover .crown-logo{
+    transform:none;
+    filter:none;
+}
+
+.logo-text{
+    display:block;
+    color:#e9b957;
+    font-family:'Cinzel',serif;
+    font-size:21px;
+    font-weight:600;
+    letter-spacing:2px;
+    line-height:1;
+    white-space:nowrap;
+}
+
+.logo-text small{
+    display:block;
+    color:white;
+    font-family:'Poppins',sans-serif;
+    font-size:5.5px;
+    font-weight:600;
+    letter-spacing:2.1px;
+    line-height:1;
+    margin-top:4px;
+    text-align:center;
+}
+
+.navbar-collapse{
+    flex:1 1 auto;
+    min-width:0;
+    display:flex!important;
+    align-items:center;
+    justify-content:center;
+}
+
+.navbar-nav{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:3px;
+    margin:0 auto!important;
+}
+
+.nav-link{
+    position:relative;
+    color:#f5f2eb!important;
+    font-family:'Poppins',sans-serif;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.25px;
+    padding:12px 9px!important;
+    margin:0!important;
+    border-radius:0!important;
+    background:transparent!important;
+    white-space:nowrap;
+    transition:color .25s ease;
+}
+
+.nav-link::after{
+    content:"";
+    position:absolute;
+    left:7px;
+    right:7px;
+    bottom:2px;
+    height:1px;
+    background:linear-gradient(90deg,#a77b25,#ffdc8a);
+    transform:scaleX(0);
+    transform-origin:center;
+    transition:transform .3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active{
+    color:#ffdc8a!important;
+    background:transparent!important;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after{
+    transform:scaleX(1);
+}
+
+.visitors{
+    flex:0 0 auto;
+    margin:0 0 0 8px;
+    padding:4px 7px;
+    border:0;
+    color:var(--light-gold);
+    font-size:10px;
+    letter-spacing:.1px;
+    white-space:nowrap;
+}
+
+.navbar-toggler{
+    border:1px solid #a77b25;
+    padding:3px 6px;
+}
+
+.navbar-toggler:focus{
+    box-shadow:0 0 0 3px #e9b95735;
+}
+
+.navbar-toggler-icon{
+    width:17px;
+    height:17px;
+    filter:invert(80%) sepia(50%) saturate(500%);
+}
+
+/* HERO IMAGE */
+
+.hero{
+    position:relative;
+    width:100%;
+    min-height:510px;
+    display:flex;
+    align-items:center;
+    padding:65px 8%;
+    overflow:hidden;
+    border-bottom:1px solid var(--gold);
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.90),
+        rgba(0,0,0,.52),
+        rgba(0,0,0,.15)
+    ),
+    url('watch3.png') center/cover no-repeat;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:650px;
+}
+
+.hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(48px,7vw,78px);
+    font-weight:700;
+    color:white;
+    margin:0 0 5px;
+    animation:heroTitle 1.1s ease both;
+}
+
+.script{
+    color:var(--light-gold);
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(25px,4vw,38px);
+    font-style:italic;
+    animation:heroSubtitle 1.3s ease both;
+}
+
+.hero-description{
+    color:#eee;
+    font-size:13px;
+    line-height:1.9;
+    animation:heroDescription 1.6s ease both;
+}
+
+@keyframes heroTitle{
+    from{opacity:0;transform:translateY(45px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes heroSubtitle{
+    from{opacity:0;transform:translateX(-40px);}
+    to{opacity:1;transform:translateX(0);}
+}
+
+@keyframes heroDescription{
+    from{opacity:0;transform:translateY(25px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+/* MAIN CONTENT */
+
+.locator-section{
+    padding:55px 4%;
+}
+
+.section-box{
+    position:relative;
+    height:100%;
+    background:linear-gradient(145deg,#19130d,#090807);
+    border:1px solid #765529;
+    border-radius:13px;
+    overflow:hidden;
+    transition:all .4s ease;
+}
+
+.section-box:hover{
+    border-color:var(--light-gold);
+    box-shadow:0 0 10px #e9b95735,0 0 25px #e9b95718;
+    transform:translateY(-4px);
+}
+
+.section-heading{
+    color:var(--light-gold);
+    font-family:'Cinzel',serif;
+    font-size:19px;
+    padding:17px 20px;
+    border-bottom:1px solid #765529;
+    transition:.3s;
+}
+
+.section-box:hover .section-heading{
+    color:#fff0bd;
+}
+
+/* STORE CARDS */
+
+.store-card{
+    display:grid;
+    grid-template-columns:125px 1fr;
+    gap:14px;
+    align-items:center;
+    padding:13px;
+    margin:12px;
+    border:1px solid #70502b;
+    border-radius:10px;
+    background:#100d09;
+    transition:all .35s ease;
+}
+
+.store-card:hover,
+.store-card.selected{
+    border-color:var(--light-gold);
+    box-shadow:0 0 16px #dca94445;
+    background:#21170e;
+    transform:translateX(4px);
+}
+
+.store-img{
+    width:100%;
+    height:120px;
+    object-fit:cover;
+    border-radius:7px;
+    transition:.4s;
+}
+
+.store-card:hover .store-img{
+    transform:scale(1.04);
+}
+
+.store-card h5{
+    font-family:'Cormorant Garamond',serif;
+    font-size:22px;
+    font-weight:700;
+    color:var(--light-gold);
+    margin-bottom:7px;
+}
+
+.store-card p{
+    font-size:10px;
+    margin-bottom:5px;
+    color:#eee4d5;
+    line-height:1.6;
+}
+
+.gold-btn{
+    color:#ffe09a;
+    border:1px solid var(--gold);
+    border-radius:30px;
+    background:transparent;
+    padding:8px 14px;
+    font-size:11px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.gold-btn:hover{
+    background:linear-gradient(120deg,#ffe09a,#e6ae53);
+    color:black;
+    border-color:var(--gold);
+    box-shadow:0 0 12px #e9b95755;
+}
+
+/* MAP */
+
+.map-frame{
+    width:100%;
+    height:310px;
+    border:0;
+    display:block;
+    filter:grayscale(.15);
+}
+
+.store-detail{
+    padding:20px;
+    border-top:1px solid #765529;
+}
+
+.store-detail h4{
+    color:var(--light-gold);
+    font-family:'Cinzel',serif;
+    font-size:19px;
+    font-weight:600;
+}
+
+.detail-image{
+    width:100%;
+    height:155px;
+    object-fit:cover;
+    border:1px solid var(--gold);
+    border-radius:8px;
+    transition:.4s;
+}
+
+.detail-image:hover{
+    transform:scale(1.03);
+    box-shadow:0 0 15px #e9b95755;
+}
+
+.detail-text p{
+    font-size:11px;
+    margin-bottom:11px;
+    color:#ddd;
+    line-height:1.7;
+}
+
+/* BENEFITS */
+
+.benefits{
+    background:#100d09;
+    border-top:1px solid #765529;
+    border-bottom:1px solid #765529;
+    padding:35px 4%;
+}
+
+.benefit-item{
+    text-align:center;
+    border-right:1px solid #765529;
+    padding:10px;
+    transition:.3s;
+}
+
+.benefit-item:hover{
+    transform:translateY(-5px);
+}
+
+.benefit-item:last-child{border:none;}
+
+.benefit-item i{
+    color:var(--light-gold);
+    font-size:35px;
+    transition:.3s;
+}
+
+.benefit-item:hover i{
+    text-shadow:0 0 15px #e9b957;
+    transform:scale(1.1);
+}
+
+.benefit-item h6{
+    margin-top:10px;
+    font-family:'Cinzel',serif;
+    font-size:12px;
+    color:white;
+}
+
+.benefit-item p{
+    color:#aaa;
+    font-size:11px;
+}
+
+/* FOOTER */
+
+.footer{
+    position:relative;
+    isolation:isolate;
+    overflow:hidden;
+    padding:48px 3% 17px;
+    border-top:1px solid #c99a43;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,4,3,.97),
+            rgba(5,4,3,.88) 48%,
+            rgba(5,4,3,.94)
+        ),
+        url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=2000&q=85')
+        center 48%/cover no-repeat;
+}
+
+.footer::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:-1;
+    background:linear-gradient(
+        180deg,
+        rgba(8,7,6,.12),
+        rgba(0,0,0,.62)
+    );
+    pointer-events:none;
+}
+
+.footer .container{
+    position:relative;
+    z-index:1;
+}
+
+.footer-logo{
+    font:700 27px 'Cinzel',serif;
+    color:var(--gold);
+    letter-spacing:3px;
+    margin:0;
+}
+
+.footer .section-label{
+    color:#ffdc8a;
+    font-size:8px;
+    letter-spacing:3px;
+    margin:5px 0 15px;
+}
+
+.footer-description{max-width:330px;}
+
+.footer h5{
+    font:600 14px 'Cinzel',serif;
+    color:#ffdc8a;
+    margin:3px 0 16px;
+}
+
+.footer p,
+.footer a{
+    color:#d0cbc2;
+    font-size:10px;
+    line-height:1.9;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.footer a:hover{
+    color:#ffdc8a;
+    padding-left:4px;
+}
+
+.footer-links{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.footer-links li{margin:5px 0;}
+
+.footer-contact{
+    display:flex;
+    gap:9px;
+    align-items:flex-start;
+    margin-bottom:8px;
+}
+
+.footer-contact i{
+    flex:0 0 13px;
+    color:var(--gold);
+    margin-top:4px;
+}
+
+.social-links{
+    display:flex;
+    gap:9px;
+}
+
+.social-links a{
+    width:31px;
+    height:31px;
+    display:grid;
+    place-items:center;
+    padding:0;
+    border:1px solid rgba(233,185,87,.65);
+    border-radius:50%;
+    color:#ffdc8a;
+    transition:all .3s ease;
+}
+
+.social-links a:hover{
+    padding:0;
+    background:var(--gold);
+    color:#080706;
+    border-color:var(--gold);
+    transform:translateY(-4px);
+}
+
+.copyright{
+    position:relative;
+    border-top:1px solid rgba(233,185,87,.35);
+    margin-top:30px;
+    padding-top:15px;
+    text-align:center;
+    color:#c2b9aa;
+    font-size:9px;
+    line-height:1.9;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1199px){
+    .nav-link{
+        font-size:9px;
+        padding:10px 6px!important;
+    }
+
+    .navbar-nav{gap:1px;}
+
+    .visitors{
+        font-size:9px;
+        margin-left:4px;
+    }
+}
+
+@media(max-width:991px){
+    .navbar{padding:10px 3%;}
+
+    .navbar>.container-fluid{flex-wrap:wrap;}
+
+    .navbar-toggler{margin-left:auto;}
+
+    .navbar-collapse{
+        display:none!important;
+        flex-basis:100%;
+        width:100%;
+        justify-content:flex-start;
+        padding:10px 0 5px;
+    }
+
+    .navbar-collapse.show{display:block!important;}
+
+    .navbar-nav{
+        padding-top:5px;
+        align-items:flex-start!important;
+        flex-direction:column;
+        gap:2px;
+        margin:0!important;
+    }
+
+    .nav-link{
+        font-size:10px;
+        padding:7px 4px!important;
+        margin:4px 0!important;
+        display:inline-block;
+    }
+
+    .nav-link::after{
+        left:4px;
+        right:4px;
+    }
+
+    .visitors{
+        display:inline-block;
+        margin:8px 0;
+        font-size:9px;
+    }
+
+    .hero{min-height:440px;}
+
+    .locator-section{padding:35px 3%;}
+
+    .footer{padding:40px 4% 16px;}
+}
+
+@media(max-width:768px){
+    .hero{
+        min-height:390px;
+        padding:50px 6%;
+        background-position:center;
+    }
+
+    .hero h1{font-size:50px;}
+
+    .script{font-size:28px;}
+
+    .store-card{
+        grid-template-columns:100px 1fr;
+        gap:12px;
+    }
+
+    .store-img{height:105px;}
+
+    .store-card h5{font-size:18px;}
+
+    .benefit-item{
+        border:none;
+        margin-bottom:15px;
+    }
+
+    .map-frame{height:270px;}
+}
+
+@media(max-width:576px){
+    .navbar{padding:10px 15px;}
+
+    .logo-text{font-size:17px;}
+
+    .crown-logo{
+        width:29px;
+        height:29px;
+    }
+
+    .hero{
+        min-height:350px;
+        padding:40px 20px;
+    }
+
+    .hero h1{font-size:43px;}
+
+    .hero-description{font-size:11px;}
+
+    .locator-section{padding:30px 13px;}
+
+    .section-heading{font-size:16px;}
+
+    .store-card{
+        grid-template-columns:85px 1fr;
+        padding:9px;
+        margin:9px;
+        gap:10px;
+    }
+
+    .store-img{height:95px;}
+
+    .store-card h5{font-size:17px;}
+
+    .store-card p{font-size:9px;}
+
+    .gold-btn{
+        font-size:10px;
+        padding:7px 10px;
+    }
+
+    .map-frame{height:230px;}
+
+    .store-detail{padding:14px;}
+
+    .detail-image{height:170px;}
+
+    .benefits{padding:25px 10px;}
+
+    .footer{
+        padding:35px 18px 15px;
+        background-position:center;
+    }
+
+    .footer h5{margin-top:8px;}
+}
+
+@media(prefers-reduced-motion:reduce){
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms!important;
+        transition-duration:.01ms!important;
+        scroll-behavior:auto!important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<nav class="navbar navbar-expand-lg">
+<div class="container-fluid">
+
+<a class="navbar-brand" href="index.html">
+
+<svg class="crown-logo"
+xmlns="http://www.w3.org/2000/svg"
+viewBox="0 0 64 64"
+role="img"
+aria-label="Alberto crown logo">
+
+<path d="M8 18 L20 29 L30 10 L42 29 L56 18 L50 46 L14 46 Z"/>
+<path d="M14 51 H50 V56 H14 Z"/>
+<circle cx="8" cy="16" r="4"/>
+<circle cx="30" cy="8" r="4"/>
+<circle cx="56" cy="16" r="4"/>
+
+</svg>
+
+<span class="logo-text">
+ALBERTO
+<small>WATCH COMPANY</small>
+</span>
+
+</a>
+
+<button class="navbar-toggler"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#mainNavbar"
+aria-controls="mainNavbar"
+aria-expanded="false"
+aria-label="Toggle navigation">
+
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="mainNavbar">
+
+<ul class="navbar-nav mx-auto align-items-lg-center">
+
+<li class="nav-item">
+<a class="nav-link" href="index.html">Home</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="product.html">Products</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="technology.html">Technology</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link active" href="store-locator.html" aria-current="page">Store Locator</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="support.html">Support</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="gallery.html">Gallery</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="aboutus.html">About Us</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="contact.html">Contact Us</a>
+</li>
+
+</ul>
+
+<div class="visitors">
+<i class="bi bi-people-fill"></i>
+Visitors: 1247
+</div>
+
+</div>
+</div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+<div class="hero-content">
+
+<h1>Store Locator</h1>
+
+<p class="script">Find Our Nearest Store</p>
+
+<p class="hero-description">
+Visit our store for an in-person experience of luxury and elegance.
+</p>
+
+</div>
+</section>
+
+<!-- STORE LOCATOR -->
+
+<section class="container-fluid locator-section">
+
+<div class="row g-4">
+
+<div class="col-lg-6">
+<div class="section-box">
+
+<h4 class="section-heading">
+<i class="bi bi-geo-alt-fill"></i>
+Our Locations
+</h4>
+
+<div id="storeList"></div>
+
+</div>
+</div>
+
+<div class="col-lg-6">
+<div class="section-box">
+
+<iframe
+id="mapFrame"
+class="map-frame"
+title="Store location map"
+loading="lazy"
+src="https://www.openstreetmap.org/export/embed.html?bbox=-74.02%2C40.70%2C-73.97%2C40.74&layer=mapnik&marker=40.7128%2C-74.0060">
+</iframe>
+
+<div class="store-detail">
+
+<h4>
+<i class="bi bi-shop"></i>
+Store Details
+</h4>
+
+<div class="row align-items-center g-3 mt-2">
+
+<div class="col-md-5">
+
+<img id="detailImage"
+class="detail-image"
+src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80"
+alt="Alberto watch store">
+
+</div>
+
+<div class="col-md-7">
+
+<div class="detail-text">
+
+<p>
+<i class="bi bi-geo-alt-fill text-warning"></i>
+<span id="detailAddress"></span>
+</p>
+
+<p>
+<i class="bi bi-telephone-fill text-warning"></i>
+<span id="detailPhone"></span>
+</p>
+
+<p>
+<i class="bi bi-envelope-fill text-warning"></i>
+info@albertowatches.com
+</p>
+
+<p>
+<i class="bi bi-clock-fill text-warning"></i>
+<span id="detailHours"></span>
+</p>
+
+</div>
+
+<a id="directions"
+href="#"
+target="_blank"
+rel="noopener noreferrer"
+class="btn gold-btn">
+
+<i class="bi bi-cursor-fill"></i>
+Get Directions
+
+</a>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- BENEFITS -->
+
+<section class="benefits">
+<div class="container-fluid">
+
+<div class="row">
+
+<div class="col-6 col-lg-3 benefit-item">
+<i class="bi bi-gem"></i>
+<h6>Worldwide Presence</h6>
+<p>In Major Cities</p>
+</div>
+
+<div class="col-6 col-lg-3 benefit-item">
+<i class="bi bi-shield-check"></i>
+<h6>Trusted by Millions</h6>
+<p>Since 1985</p>
+</div>
+
+<div class="col-6 col-lg-3 benefit-item">
+<i class="bi bi-headset"></i>
+<h6>Dedicated Customer Support</h6>
+<p>Always Here to Help</p>
+</div>
+
+<div class="col-6 col-lg-3 benefit-item">
+<i class="bi bi-globe"></i>
+<h6>Experience Luxury</h6>
+<p>Near You</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+<div class="container">
+
+<div class="row g-4">
+
+<div class="col-lg-4 col-md-6">
+
+<h2 class="footer-logo">ALBERTO</h2>
+<p class="section-label">WATCH COMPANY</p>
+
+<p class="footer-description">
+Defining timeless elegance through sophisticated
+watch designs. Discover the art of fine timekeeping
+with Alberto Watch Company.
+</p>
+
+<div class="social-links mt-4">
+
+<a href="https://www.facebook.com" aria-label="Facebook">
+<i class="bi bi-facebook"></i>
+</a>
+
+<a href="https://www.instagram.com" aria-label="Instagram">
+<i class="bi bi-instagram"></i>
+</a>
+
+<a href="https://twitter.com" aria-label="Twitter">
+<i class="bi bi-twitter-x"></i>
+</a>
+
+<a href="https://www.youtube.com" aria-label="YouTube">
+<i class="bi bi-youtube"></i>
+</a>
+
+</div>
+</div>
+
+<div class="col-lg-2 col-md-6">
+
+<h5>Quick Links</h5>
+
+<ul class="footer-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="product.html">Products</a></li>
+<li><a href="technology.html">Technology</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+</ul>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<h5>Customer Care</h5>
+
+<ul class="footer-links">
+<li><a href="aboutus.html">About Us</a></li>
+<li><a href="support.html">Customer Support</a></li>
+<li><a href="store-locator.html">Store Locator</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+</ul>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<h5>Get In Touch</h5>
+
+<p class="footer-contact">
+<i class="bi bi-geo-alt-fill"></i>
+New York, United States
+</p>
+
+<p class="footer-contact">
+<i class="bi bi-telephone-fill"></i>
++1 800 123 4567
+</p>
+
+<p class="footer-contact">
+<i class="bi bi-envelope-fill"></i>
+info@albertowatches.com
+</p>
+
+<p class="footer-contact">
+<i class="bi bi-clock-fill"></i>
+Mon - Sat: 9:00 AM - 9:00 PM
+</p>
+
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 Alberto Watch Company. All Rights Reserved.
+<br>
+Designed with Elegance.
+</div>
+
+</div>
+</footer>
+
+<!-- BOOTSTRAP JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+/* STORE DATA */
+
+const stores = [
+
+{
+    name:"New York Flagship Store",
+    address:"123 Luxury Lane, New York, NY 10001",
+    phone:"+1 800 123 4567",
+    hours:"Mon – Sat: 9:00 AM – 9:00 PM",
+    lat:40.7128,
+    lon:-74.0060,
+    bbox:"-74.02,40.70,-73.97,40.74",
+    image:"https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80"
+},
+
+{
+    name:"London Boutique",
+    address:"45 Baker Street, London, UK SW1A 1AA",
+    phone:"+44 20 7123 4567",
+    hours:"Mon – Sat: 9:00 AM – 8:00 PM",
+    lat:51.5237,
+    lon:-0.1585,
+    bbox:"-0.18,51.50,-0.13,51.54",
+    image:"https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80"
+},
+
+{
+    name:"Dubai Store",
+    address:"Sheikh Zayed Road, Dubai, UAE",
+    phone:"+971 4 123 4567",
+    hours:"Mon – Sat: 10:00 AM – 10:00 PM",
+    lat:25.2048,
+    lon:55.2708,
+    bbox:"55.24,25.18,55.30,25.23",
+    image:"https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80"
+}
+
+];
+
+/* DISPLAY STORE CARDS */
+
+const storeList=document.getElementById("storeList");
+
+function selectStore(index){
+
+    const store=stores[index];
+
+    document.querySelectorAll(".store-card").forEach((card,i)=>{
+        card.classList.toggle("selected",i===index);
+    });
+
+    document.getElementById("detailAddress").textContent=
+        store.address;
+
+    document.getElementById("detailPhone").textContent=
+        store.phone;
+
+    document.getElementById("detailHours").textContent=
+        store.hours;
+
+    document.getElementById("detailImage").src=
+        store.image;
+
+    document.getElementById("detailImage").alt=
+        store.name;
+
+    const bbox=store.bbox.split(",")
+        .map(encodeURIComponent)
+        .join("%2C");
+
+    document.getElementById("mapFrame").src=
+        `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${store.lat}%2C${store.lon}`;
+
+    document.getElementById("directions").href=
+        `https://www.google.com/maps/dir/?api=1&destination=${store.lat},${store.lon}`;
+
+}
+
+/* CREATE STORE CARDS */
+
+stores.forEach((store,index)=>{
+
+    const card=document.createElement("div");
+
+    card.className="store-card";
+
+    const image=document.createElement("img");
+    image.src=store.image;
+    image.alt=store.name;
+    image.className="store-img";
+    image.loading="lazy";
+
+    const content=document.createElement("div");
+
+    const heading=document.createElement("h5");
+    heading.textContent=store.name;
+
+    const address=document.createElement("p");
+    address.innerHTML='<i class="bi bi-geo-alt-fill text-warning"></i> ';
+    address.append(document.createTextNode(store.address));
+
+    const phone=document.createElement("p");
+    phone.innerHTML='<i class="bi bi-telephone-fill text-warning"></i> ';
+    phone.append(document.createTextNode(store.phone));
+
+    const hours=document.createElement("p");
+    hours.innerHTML='<i class="bi bi-clock-fill text-warning"></i> ';
+    hours.append(document.createTextNode(store.hours));
+
+    const button=document.createElement("button");
+    button.type="button";
+    button.className="btn gold-btn";
+    button.innerHTML='View on Map <i class="bi bi-arrow-right"></i>';
+
+    button.addEventListener("click",()=>{
+        selectStore(index);
+    });
+
+    content.append(heading,address,phone,hours,button);
+
+    card.append(image,content);
+
+    storeList.appendChild(card);
+
+});
+
+/* DEFAULT STORE */
+
+selectStore(0);
+
+/* NAVBAR MOBILE CLOSE */
+
+document.querySelectorAll("#mainNavbar .nav-link").forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        const navbar=document.getElementById("mainNavbar");
+
+        if(window.innerWidth<992){
+            bootstrap.Collapse.getInstance(navbar)?.hide();
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
